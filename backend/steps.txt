@@ -1,4 +1,10 @@
-***Backend
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+BACK END
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 npm init 
 npm i express mongoose bcrypt body-parser dotenv
@@ -75,3 +81,101 @@ npm i uniqid
 done Backend
 
 npm i cors
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ADMIN FRONT END
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+npm i react-icons
+npm i react-router-dom
+npm i antd
+
+create layout with ant design
+*dashboard
+npm install @ant-design/charts --force
+
+form add 
+npm i react-quill
+npm install react-form-stepper --save
+
+npm install axios --force
+
+npm i yup --force
+npm install formik 
+npm install @reduxjs/toolkit react-redux --force 
+
+create app /store -> index.js import
+
+create util features / auth /authSlice  && authService
+configuration them
+
+util -> base_url : link localhost/api
+Yup use Warning
+
+use Select in antd
+Notice show 
+npm install --save react-toastify
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+FRONT END 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+npx create-react-app digital-fe --template redux
+npm i react-icons
+npm i react-router-dom
+
+delete some file don't use 
+keep app.css app.js index.js
+
+** create components , pages 
+
+react router dom oulet 
+__ create page Home 
+setting write html in  .js
+"emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+}
+
+** instal slide Marqee play logo
+npm i react fast marquee
+
+** rating instal libary 
+npm i react-rating-stars-component
+** instal swiper 
+npm i swiper
+
+** instal react helmet 
+npm i react-helmet
+use change title
+
+** Our store use 
+let location = useLocation();
+
+zoom image product
+npm i react-image-zoom
+
+done html css
+CustomInput / Container short code
+
+domain 
+netlify.com
+'
+
+npm install @reduxjs/toolkit
+npm install react-redux
+npm i axios
+npm install formik --save
+
+npm i yup
+npm i react-toastify
