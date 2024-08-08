@@ -19,6 +19,13 @@ const Home = () => {
     dispatch(getAllProduct());
   }, [dispatch]);
   const productstate = useSelector((state) => state?.product?.product);
+  const specialProducts = productstate
+    ? productstate.filter((item) => item?.tags.includes("Special")).slice(0, 4)
+    : [];
+
+  const popularProducts = productstate
+    ? productstate.filter((item) => item?.tags.includes("Popular")).slice(0, 4)
+    : [];
   return (
     <>
       <Meta title={"Home"}></Meta>
@@ -250,20 +257,17 @@ const Home = () => {
             <h3 className="section-heading">Special Products</h3>
           </div>
           <div className="row">
-            {productstate &&
-              productstate?.map((item, index) => {
-                if (item.tags === "Special") {
-                  return (
-                    <SpecialProduct
-                      key={index}
-                      title={item?.title}
-                      brand={item?.brand}
-                      price={item?.price}
-                    />
-                  );
-                }
-                return null;
-              })}
+            {specialProducts.map((item, index) => (
+              <SpecialProduct
+                key={index}
+                title={item?.title}
+                brand={item?.brand}
+                price={item?.price}
+                totalrating={item?.totalrating.toString()}
+                sold={item?.sold}
+                quantity={item?.quantity}
+              />
+            ))}
           </div>
         </div>
       </Container>
@@ -273,10 +277,7 @@ const Home = () => {
             <h3 className="section-heading">Our Popular Products</h3>
           </div>
           <div className="row">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <ProductCard data={popularProducts} />;
           </div>
         </div>
       </Container>

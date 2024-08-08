@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 const SpecialProduct = (props) => {
-  const { title, brand } = props;
+  const { id, title, brand, price, totalrating, sold, quantity } = props;
   return (
     <div className="col-6 mb-3">
       <div className="special-product-card">
@@ -61,11 +61,13 @@ const SpecialProduct = (props) => {
               count={5}
               size={24}
               value={4}
-              interactive={false}
+              interactive={totalrating}
+              edit={false}
               fillColor="#ffd700"
             />
             <p className="price">
-              <span className="red-p">$100</span>&nbsp;<strike>$200</strike>
+              <span className="red-p">${price}</span>&nbsp;
+              <strike>${price}</strike>
             </p>
             <div className="discount-still d-flex align-items-center gap-10">
               <p className="mb-0">
@@ -78,15 +80,15 @@ const SpecialProduct = (props) => {
               </div>
             </div>
             <div className="prod-count">
-              <p>Product: 5</p>
+              <p>Product:{quantity}</p>
               <div className="progress">
                 <div
                   className="progress-bar"
                   role="progressbar"
-                  style={{ width: "25%" }}
-                  aria-valuenow="25"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
+                  style={{ width: quantity / quantity + sold * 100 + "%" }}
+                  aria-valuenow={quantity / quantity + sold * 100}
+                  aria-valuemin={quantity}
+                  aria-valuemax={sold + quantity}
                 ></div>
               </div>
             </div>
